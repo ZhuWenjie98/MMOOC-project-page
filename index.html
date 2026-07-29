@@ -242,7 +242,7 @@
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
            <h1 class="title is-3 publication-title" style="text-align: center; line-height: 1.3;">
-            Dual Distribution Estimation for Zero-shot Noisy Test-Time Adaptation with VLMs <br>
+            MMOOC: A Comprehensive Benchmark for Out-of-Context Evaluation in Multimodal Large Language Models <br>
           </span>
           </h1>
             <div class="is-size-5 publication-authors">
@@ -251,10 +251,6 @@
                 <a href="https://zhuwenjie98.github.io/" target="_blank">Wenjie Zhu</a>,</span>
                 <span class="author-block">
                   <a href="https://ybzh.github.io/" target="_blank">Yabin Zhang</a>,</span>
-                  <span class="author-block">
-                  <a href="https://liangxuy.github.io/" target="_blank">Liang Xu</a>,</span>
-                  <span class="author-block">  
-                    <a href="https://jinx-ustc.github.io/jinxin.github.io/" target="_blank">Xin Jin</a>,</span>
                   <span class="author-block">
                     <a href="https://scholar.google.com/citations?user=_cUfvYQAAAAJ&hl=en" target="_blank">Wenjun Zeng</a><sup>†</sup>,</span>
                   <span class="author-block">
@@ -265,11 +261,10 @@
                   <span class="author-block">
                   <span style="font-size: 0.85em;">
                       1.The Hong Kong Polytechnic University; 2.Eastern Institute of Technology, Ningbo <br>
-                      3.Harbin Institute of Technology (Shenzhen); 4.Shanghai Jiao Tong University
+                      3.Harbin Institute of Technology (Shenzhen);
                   </span>
                   <br>
                   <span style="font-size: 1.2em; font-weight: bold;">
-                      ECCV 2026
                   </span>
                   </span>
 
@@ -325,20 +320,20 @@
       <div style="display:flex; justify-content:center; gap:20px;">
 
       <div style="width:45%; text-align:center;">
-        <img src="static/images/tsne_tta_visualization.png"
-            alt="CLIP vs. DDE Classifiers"
+        <img src="static/images/donut.png"
+            alt="Hierarchical distribution of the MMOOC benchmark."
             style="width:100%; height:auto;">
         <p style="margin-top:8px; font-size:0.95rem;">
-          (a) t-SNE visualization of feature distributions.
+          Hierarchical distribution of the MMOOC benchmark.
         </p>
       </div>
 
       <div style="width:45%; text-align:center;">
-        <img src="static/images/id_ood_prediction_distribution.png"
-            alt="Label distribution"
+        <img src="static/images/mmooc_motivation.pdf"
+            alt="Comparison of conventional, refusal, and our MMOOC benchmarks."
             style="width:100%; height:auto;">
         <p style="margin-top:8px; font-size:0.95rem;">
-          (b) Predicted label distribution on ID and OOD samples.
+          Comparison of conventional, refusal, and our MMOOC benchmarks.
         </p>
       </div>
       </div>
@@ -357,8 +352,9 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            While test-time adaptation (TTA) empowers vision-language models to adapt without costly retraining, it remains highly vulnerable to out-of-distribution (OOD) outliers prevalent in real-world applications. This discrepancy motivates Noisy TTA (NTTA), an online task to filter noisy OOD samples on the fly while maximizing in-distribution (ID) classification accuracy. Existing zero-shot NTTA approaches typically rely on test-time discriminative training, leading to overconfident misclassifications and significantly degraded inference efficiency. To address these limitations, we propose a novel framework named Dual Distribution Estimation (DDE), shifting the zero-shot NTTA paradigm from instance-level learning to training-free Gaussian distribution modeling. DDE incorporates two novel modules: Positive Feature Distribution Estimation (PFDE) and Negative Label Distribution Estimation (NLDE). PFDE explicitly models class-wise inclusion and exclusion Gaussian distributions to formulate a calibrated contrastive score, robustly enhancing ID accuracy. In parallel, NLDE improves OOD identification by explicitly modeling the negative label distribution to mine highly discriminative labels, effectively mitigating spurious correlations. Extensive experiments show that on the large-scale ImageNet benchmark, DDE achieves an improvement of 3.70\% in harmonic mean accuracy and reduces the FPR95 for OOD detection by 6.20\%, while ensuring highly scalable and efficient online inference. Furthermore, DDE is zero-shot and training-free, demonstrating remarkable robustness in data-scarce scenarios.
-            Codes are available at \url{https://github.com/ZhuWenjie98/DDE}.
+            Multimodal Large Language Models (MLLMs) have achieved strong performance on a wide range of vision-language tasks, but they often fail under imperfect or shifted contexts. A reliable MLLM should refuse truly out-of-context (OOC) questions with subject-level context shifts, while still answering shifted in-context (Shifted IC) questions with non-subject context shifts. Existing benchmarks mainly target OOC or visually unanswerable questions, but overlook answerable Shifted IC cases and cover limited OOC shifts.
+To fill this gap, we present \textbf{MMOOC}, a large-scale benchmark for evaluating refusal ability and robust answering in MLLMs. MMOOC contains over 28K image-question pairs, including answerable Shifted IC cases and unanswerable OOC cases, spanning three question formats and six visual scenarios, with data quality ensured through MLLM-based filtering and human verification.
+We evaluate model responses using Accuracy and Refusal Rate, and further introduce an LLM-as-a-Judge metric to assess the correctness of model reasoning. Experiments on diverse MLLMs show that current models still struggle to balance answerability and refusal under shifted contexts. We further analyze key failure patterns and show that  post-training improves robustness.
           </p>
         </div>
       </div>
@@ -375,10 +371,10 @@
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Framework Overview</h2> <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Examples of the eight MMOOC scenarios.</h2> <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <div class="publication-image">
-            <img src="static/images/eccv_frame.png" alt="Framework Overview" style="border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <img src="static/images/mmooc_scenarios.pdf" alt="Examples of the eight MMOOC scenarios." style="border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
           </div>
         </div>
       </div>
@@ -401,12 +397,7 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{zhu2026dual,
-  title={Dual Distribution Estimation for Zero-shot Noisy Test-Time Adaptation with VLMs},
-  author={Zhu, Wenjie and Zhang, Yabin and Xu, Liang and Jin, Xin and Zeng, Wenjun and Zhang, Lei},
-  journal={arXiv preprint arXiv:2606.25758},
-  year={2026}
-}
+      <pre id="bibtex-code"><code>
       </code></pre>
     </div>
 </section>
